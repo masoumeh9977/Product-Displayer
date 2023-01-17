@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index');
 Route::get('/product/show', [ProductController::class, 'show'])->name('product.show');
+Route::get('/product/pdf', [ProductController::class, 'create_pdf'])->name('product.pdf');

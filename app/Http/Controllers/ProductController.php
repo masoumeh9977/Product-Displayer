@@ -22,4 +22,8 @@ class ProductController extends Controller
             return view('product.show', ['product' => $product]);
         }
     }
+
+    public function create_pdf()
+    {
+    }
 }

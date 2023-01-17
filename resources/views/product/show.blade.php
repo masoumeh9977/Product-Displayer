@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="#" method="POST">
+                <form action="{{ route('product.print') }}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-primary btn-block mb-2">Create PDF</button>
                 </form>
