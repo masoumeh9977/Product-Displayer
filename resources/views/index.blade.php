@@ -6,12 +6,21 @@
             <div class="card mt-5">
                 <div class="card-body">
                     <h4 class="card-title">Please Enter Your Favorite Product ID to See Its Details</h4>
-                    <form class="mt-3" action="#" method="GET">
+                    <form class="mt-3" action="{{ route('product.show') }}" method="GET">
                         @csrf
-                        <div class="form-group">
-                            <label for="product_id">Id:</label>
-                            <input type="text" class="form-control" id="product_id" name="product_id" title="dkp-id">
+                        
+                        <label for="product_id">Id:</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon">dkp-</span>
+                            <input type="text" class="form-control" id="product_id" name="id" title="dkp-id"
+                                aria-describedby="basic-addon">
                         </div>
+
+                        @error('id')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <button type="submit" class="btn btn-primary btn-block mb-2">Display Details</button>
                     </form>
                 </div>
