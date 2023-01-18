@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col card mt-5 mb-5">
+                @if(isset($product->rating['count']))
                 <img src="{{ $product->images['main']['url'][0] }}" class="card-img-top w-25 h-25 m-auto" alt="product image">
                 <div class="card-body">
                     <h4 class="card-title">Product Details</h4>
@@ -43,6 +44,12 @@
                     <button type="submit" class="btn btn-primary btn-block mb-2">Create PDF</button>
                 </form>
             </div>
+            @else
+            <div class="alert alert-danger mt-5">
+                Not Available!
+            </div>
+            @endif
         </div>
+       
     </div>
 @endsection
